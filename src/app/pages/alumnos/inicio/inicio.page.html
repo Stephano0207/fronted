@@ -29,7 +29,7 @@
             Apellido:{{alumno.apellidos}}</ion-label
           >
           <ion-buttons slot="end">
-            <ion-button [routerLink]="['/clientes/update/',alumno.idalumno]">
+            <ion-button [routerLink]="['/alumno-edit/',alumno.idalumno]">
               <ion-icon slot="start" name="create"></ion-icon> Editar
             </ion-button>
             <ion-button (click)="borrar(alumno.idalumno)">

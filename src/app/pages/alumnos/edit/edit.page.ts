@@ -26,6 +26,7 @@ export class EditPage implements OnInit {
     });
     const idParam=this.param.snapshot.paramMap.get('id') ;
     this.id= idParam ? +idParam:0;
+    console.log(this.id);
   }
 
   update(){

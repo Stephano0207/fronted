@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/contactos/create/create.module').then( m => m.CreatePageModule)
   },
   {
-    path: 'alumno-edit',
+    path: 'alumno-edit/:id',
     loadChildren: () => import('./pages/alumnos/edit/edit.module').then( m => m.EditPageModule)
   },
 
