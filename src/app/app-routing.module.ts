@@ -11,6 +11,28 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'alumno-create',
+    loadChildren: () => import('./pages/alumnos/create/create.module').then( m => m.CreatePageModule)
+  },
+  {
+    path: 'contacto-create',
+    loadChildren: () => import('./pages/contactos/create/create.module').then( m => m.CreatePageModule)
+  },
+  {
+    path: 'alumno-edit',
+    loadChildren: () => import('./pages/alumnos/edit/edit.module').then( m => m.EditPageModule)
+  },
+
+  {
+    path: 'alumno-inicio',
+    loadChildren: () => import('./pages/alumnos/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'contacto-edit/:id',
+    loadChildren: () => import('./pages/contactos/edit/edit.module').then( m => m.EditPageModule)
+  },
+
 ];
 
 @NgModule({

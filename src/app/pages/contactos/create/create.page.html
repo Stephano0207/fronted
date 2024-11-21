@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Contacto-create</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Contacto-create</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+
+      <ion-card-title>Crear Contacto</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="alumnoForm" (ngSubmit)="save()">
+        <ion-list>
+          <ion-item>
+            <ion-input type="text" formControlName="nombre" placeholder="Ingresar su nombre" label="Nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" formControlName="numero_telefono" placeholder="Ingresar su numero de telefono" label="Telefono"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="email" formControlName="correo_electronico" placeholder="Ingresar su correo electronico" label="Correo"></ion-input>
+          </ion-item>
+
+
+            <ion-button expand="block" type="submit" [disabled]="!alumnoForm.valid"  >
+              Registrar
+            </ion-button>
+
+        </ion-list>
+      </form>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let contacto of contactos">
+      <ion-label>
+        <h2>{{ contacto.nombre }}</h2>
+        <p>{{ contacto.numero_telefono }}</p>
+        <p>{{ contacto.correo_electronico }}</p>
+      </ion-label>
+      <ion-button color="primary" [routerLink]="['/contacto-edit/', contacto.id]">Editar</ion-button>
+      <ion-button color="danger" (click)="eliminarContacto(contacto.id)">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
