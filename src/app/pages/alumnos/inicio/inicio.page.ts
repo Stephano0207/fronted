@@ -18,6 +18,10 @@ export class InicioPage implements OnInit {
     this.getAll()
   }
 
+  ionViewWillEnter(){
+    this.getAll()
+  }
+
   getAll(){
     this.service.getAll().subscribe(
       (response:any)=>{

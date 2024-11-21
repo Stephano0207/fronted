@@ -29,6 +29,8 @@ export class EditPage implements OnInit {
     console.log(this.id);
   }
 
+
+
   update(){
     if (this.alumnoForm.valid) {
       const alumno: AlumnoCreate = this.alumnoForm.value;
