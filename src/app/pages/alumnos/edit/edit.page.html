@@ -1,13 +1,44 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>edit</ion-title>
+    <ion-title>Alumno-Edit</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">edit</ion-title>
+      <ion-title size="large">Alumno-edit</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <ion-card-header>
+
+      <ion-card-title>Edit Alumno</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="alumnoForm" (ngSubmit)="update()">
+        <ion-list>
+          <ion-item>
+            <ion-input type="text" formControlName="nombres" placeholder="Ingresar su nombre" label="Nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" formControlName="apellidos" placeholder="Ingresar su apellido" label="Apellido"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="number" formControlName="edad" placeholder="Ingresar su edad" label="Edad"></ion-input>
+          </ion-item>
+
+
+
+
+            <ion-button expand="block" type="submit" [disabled]="!alumnoForm.valid"  >
+              Registrar
+            </ion-button>
+
+        </ion-list>
+      </form>
+
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

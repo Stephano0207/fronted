@@ -26,6 +26,7 @@ export class AlumnoService {
   }
 
   delete(id:number){
+    console.log(id);
     return this.http.delete(`${this.url}/${id}`);
   }
 }
