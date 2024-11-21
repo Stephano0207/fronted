@@ -36,6 +36,6 @@ export class EditPage implements OnInit {
 
   async guardarEdicion() {
     await this.contactoService.actualizarContacto(this.contacto);
-    this.router.navigate(['/contactos']); // Redirige de vuelta a la lista de contactos
+    this.router.navigate(['/contacto-create']); // Redirige de vuelta a la lista de contactos
   }
 }
